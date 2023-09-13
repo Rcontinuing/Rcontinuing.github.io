@@ -2358,6 +2358,7 @@ header.header {
 }
 .column {
   width: 240px;
+  height: 800px;
 }
 @media (max-width: 991px) {
   .column {
@@ -2365,6 +2366,7 @@ header.header {
   }
 }
 .site-brand-container {
+  margin-top: 15px;
   background: var(--theme-color);
   background: url("../../../images/5.png");
   background-size: 100% 100%;
@@ -2384,6 +2386,16 @@ header.header {
 }
 .site-meta .site-subtitle {
   color: #fff;
+}
+.site-author-name {
+  color: #5f9ea0;
+}
+.site-description {
+  color: #deb887;
+}
+.links-of-author-item {
+  display: inline-block;
+  margin-bottom: 20px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-nav-toggle,
@@ -2609,6 +2621,7 @@ header.header {
 .post-block,
 .comments {
   padding: 40px;
+  margin: 20px;
 }
 .post-eof {
   display: none;
