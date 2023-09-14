@@ -3,9 +3,16 @@
   <entry>
     <title>123</title>
     <url>/2023/09/11/123/</url>
-    <content><![CDATA[<p>这是内容</p>
+    <content><![CDATA[<h2 id="网站介绍"><a href="#网站介绍" class="headerlink" title="网站介绍"></a>网站介绍</h2><p>​		这篇文章主要是对我搭建的博客做一个简单的介绍。。。</p>
 <span id="more"></span>
+
 ]]></content>
+      <categories>
+        <category>6</category>
+      </categories>
+      <tags>
+        <tag>6</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>

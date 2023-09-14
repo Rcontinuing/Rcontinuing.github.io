@@ -2618,6 +2618,17 @@ header.header {
     margin-top: 8px;
   }
 }
+.post-header .post-title a,
+.post-header h1 {
+  color: #f00;
+}
+.post-block {
+  color: #00f;
+  opacity: 0.7;
+}
+.post-meta {
+  color: #000;
+}
 .post-block,
 .comments {
   padding: 40px;
