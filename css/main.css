@@ -2358,7 +2358,7 @@ header.header {
 }
 .column {
   width: 240px;
-  height: 800px;
+  height: 820px;
 }
 @media (max-width: 991px) {
   .column {
