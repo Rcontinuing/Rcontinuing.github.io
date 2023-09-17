@@ -2389,16 +2389,6 @@ header.header {
 .footer-inner #times {
   color: #f00;
 }
-.busuanzi-count #busuanzi_container_site_uv {
-  display: block;
-  float: left;
-  margin-left: 350px;
-}
-.busuanzi-count #busuanzi_container_site_pv {
-  display: block;
-  float: left;
-  margin-right: 280px;
-}
 .column {
   width: 240px;
   height: 820px;
