@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>关于本网站</title>
+    <url>/2023/09/11/123/</url>
+    <content><![CDATA[<h2 id="网站介绍"><a href="#网站介绍" class="headerlink" title="网站介绍"></a>网站介绍</h2><p>​		这篇文章主要是对我搭建的博客做一个简单的介绍。。。</p>
+<span id="more"></span>
+
+<p><strong>目的</strong>：突发奇想搭建一个博客网站，用来记录自己的学习和生活。</p>
+<p><strong>内容</strong>：我会将目前所学的一些内容上传该网站。</p>
+<p><strong>你</strong>：目前网站左侧有音乐按钮，这几个都是我的网易云歌单，如果你想听你的歌单，按照以下步骤操作。</p>
+<p>找到自己音乐平台的歌单 id（暂时只支持网易云）。如下图</p>
+<img data-src="E:\blog\source\_posts\123.assets\image-20230917212236502.png" alt="image-20230917212236502" style="zoom: 67%;">
+
+
+
+<p>在地址栏可以看到自己的<strong>歌单 id</strong>, 图中是 8729907126，你可以把你的 id 发在评论区，不出意外第二天你就可以看到你的歌单。（已经再努力支持其他音乐平台了）。</p>
+<p><strong>最后</strong>：欢迎大家提任何意见，包括网站，学习，以及其他建议，一起学习。</p>
+<p>​		</p>
+]]></content>
+      <categories>
+        <category>6</category>
+      </categories>
+      <tags>
+        <tag>6</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>位运算</title>
     <url>/2023/09/16/%E4%BD%8D%E8%BF%90%E7%AE%97/</url>
     <content><![CDATA[<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1. 介绍</h3><p><strong>什么是位运算呢？位运算就是二进制数据进行运算的运算符，这里我们主要说到左移，右移，按位与，按位或，按位取反，异或。</strong></p>
@@ -50,28 +75,5 @@
   </div>
 </div>
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-  </entry>
-  <entry>
-    <title>关于本网站</title>
-    <url>/2023/09/11/123/</url>
-    <content><![CDATA[<h2 id="网站介绍"><a href="#网站介绍" class="headerlink" title="网站介绍"></a>网站介绍</h2><p>​		这篇文章主要是对我搭建的博客做一个简单的介绍。。。</p>
-<span id="more"></span>
-
-<p><strong>目的</strong>：突发奇想搭建一个博客网站，用来记录自己的学习和生活。</p>
-<p><strong>内容</strong>：我会将目前所学的一些内容上传该网站。</p>
-<p><strong>你</strong>：目前网站左侧有音乐按钮，这几个都是我的网易云歌单，如果你想听你的歌单，按照以下步骤操作。</p>
-<p>找到自己音乐平台的歌单 id（暂时只支持网易云）。如下图</p>
-<img data-src="C:\Users\东东酱\AppData\Roaming\Typora\typora-user-images\image-20230917210452885.png" alt="image-20230917210452885" style="zoom: 50%;">
-
-<p>在地址栏可以看到自己的<strong>歌单 id</strong>, 图中是 8729907126，你可以把你的 id 发在评论区，不出意外第二题你就可以看到你的歌单。（已经再努力支持其他音乐平台了）。</p>
-<p><strong>最后</strong>：欢迎大家提任何意见，包括网站，学习，以及其他建议，一起学习。</p>
-<p>​		</p>
-]]></content>
-      <categories>
-        <category>6</category>
-      </categories>
-      <tags>
-        <tag>6</tag>
-      </tags>
   </entry>
 </search>
