@@ -21,28 +21,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":12,"offset":10},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="位运算1. 介绍什么是位运算呢？位运算就是二进制数据进行运算的运算符，这里我们主要说到左移，右移，按位与，按位或，按位取反，异或。 2. 位运算的使用">
+    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="位运算">
-<meta property="og:url" content="http://example.com/2023/09/16/%E4%BD%8D%E8%BF%90%E7%AE%97/index.html">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="http://example.com/hello-world/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="位运算1. 介绍什么是位运算呢？位运算就是二进制数据进行运算的运算符，这里我们主要说到左移，右移，按位与，按位或，按位取反，异或。 2. 位运算的使用">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-09-16T09:32:09.000Z">
-<meta property="article:modified_time" content="2023-09-17T01:41:09.287Z">
+<meta property="article:published_time" content="2023-09-11T03:17:43.679Z">
+<meta property="article:modified_time" content="2023-09-12T09:54:57.399Z">
 <meta property="article:author" content="ddj">
-<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2023/09/16/%E4%BD%8D%E8%BF%90%E7%AE%97/">
+<link rel="canonical" href="http://example.com/hello-world/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/09/16/%E4%BD%8D%E8%BF%90%E7%AE%97/","path":"2023/09/16/位运算/","title":"位运算"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/hello-world/","path":"hello-world/","title":"Hello World"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>位运算 | </title>
+<title>Hello World | </title>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js"></script>
@@ -133,7 +132,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -146,7 +145,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="nav-number">1.</span> <span class="nav-text">位运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">1. 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">2. 位运算的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%B7%A6%E7%A7%BB"><span class="nav-number">1.2.1.</span> <span class="nav-text">（1）左移 &lt;&lt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%8F%B3%E7%A7%BB"><span class="nav-number">1.2.2.</span> <span class="nav-text">（2）右移 &gt;&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E6%8C%89%E4%BD%8D%E4%B8%8E"><span class="nav-number">1.2.3.</span> <span class="nav-text">（3）按位与 &amp;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E6%8C%89%E4%BD%8D%E6%88%96"><span class="nav-number">1.2.4.</span> <span class="nav-text">（4）按位或 |</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%885%EF%BC%89%E6%8C%89%E4%BD%8D%E5%8F%96%E5%8F%8D"><span class="nav-number">1.2.5.</span> <span class="nav-text">（5）按位取反～</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%886%EF%BC%89%E5%BC%82%E6%88%96"><span class="nav-number">1.2.6.</span> <span class="nav-text">（6）异或 ^</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%BB%93%E8%AE%BA"><span class="nav-number">1.3.</span> <span class="nav-text">3. 结论</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -248,7 +246,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/16/%E4%BD%8D%E8%BF%90%E7%AE%97/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/9.png">
@@ -261,12 +259,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="位运算 | ">
+      <meta itemprop="name" content="Hello World | ">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          位运算
+          Hello World
         </h1>
 
         <div class="post-meta-container">
@@ -277,23 +275,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-09-16 17:32:09" itemprop="dateCreated datePublished" datetime="2023-09-16T17:32:09+08:00">2023-09-16</time>
+      <time title="创建时间：2023-09-11 11:17:43" itemprop="dateCreated datePublished" datetime="2023-09-11T11:17:43+08:00">2023-09-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-17 09:41:09" itemprop="dateModified" datetime="2023-09-17T09:41:09+08:00">2023-09-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-        </span>
+      <time title="修改时间：2023-09-12 17:54:57" itemprop="dateModified" datetime="2023-09-12T17:54:57+08:00">2023-09-12</time>
     </span>
 
   
@@ -310,7 +299,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>602</span>
+      <span>79</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -323,41 +312,24 @@
 
 
           
-              <i class="fa fa-thumb-tack" style="color: #EB6D39"></i>
-              <font color=EB6D39>置顶</font>
-              <span class="post-meta-divider">|</span>
-          
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1. 介绍</h3><p><strong>什么是位运算呢？位运算就是二进制数据进行运算的运算符，这里我们主要说到左移，右移，按位与，按位或，按位取反，异或。</strong></p>
-<h3 id="2-位运算的使用"><a href="#2-位运算的使用" class="headerlink" title="2.位运算的使用"></a>2. 位运算的使用</h3><span id="more"></span>
-
-<h4 id="（1）左移"><a href="#（1）左移" class="headerlink" title="（1）左移<<"></a>（1）左移 &lt;&lt;</h4><blockquote>
-<p><strong>左移 &lt;&lt; 顾名思义就是向左移动。</strong><br>如数据：1010&lt;&lt;1 1010 左移一位后：10100 即向左移动，低位补 0</p>
-</blockquote>
-<h4 id="（2）右移"><a href="#（2）右移" class="headerlink" title="（2）右移>>"></a>（2）右移 &gt;&gt;</h4><blockquote>
-<p><strong>右移 &gt;&gt; 顾名思义就是向右移动</strong><br>如数据：1010&gt;&gt;1 1010 右移一位：101 向右移动</p>
-</blockquote>
-<h4 id="（3）按位与"><a href="#（3）按位与" class="headerlink" title="（3）按位与&amp;"></a>（3）按位与 &amp;</h4><blockquote>
-<p><strong>按位与与代码中的逻辑运算从差不多，两个都是 1 才是 1，否则是 0.</strong><br>如：1 0 1 0 &amp; 1 1 0 0 ———————————— 1 0 0 0</p>
-</blockquote>
-<h4 id="（4）按位或"><a href="#（4）按位或" class="headerlink" title="（4）按位或|"></a>（4）按位或 |</h4><blockquote>
-<p><strong>按位或和我们代码中加的逻辑运算差不多，在对两个二进制数进行或运算时，只要其中一个有 1，那么就是 1，两个都为 0 才是 0.</strong><br>如：1 0 1 0 | 0 1 1 0 _____________ 1 1 1 0</p>
-</blockquote>
-<h4 id="（5）按位取反"><a href="#（5）按位取反" class="headerlink" title="（5）按位取反~"></a>（5）按位取反～</h4><blockquote>
-<p><strong>按位取反就是对于每一位 1 变成 0,0 变成 1.</strong><br>如：~1010 取反后：0101</p>
-</blockquote>
-<h4 id="（6）异或"><a href="#（6）异或" class="headerlink" title="（6）异或^"></a>（6）异或 ^</h4><blockquote>
-<p><strong>异或就是一位一位查看，看看是不是不一样，不一样就是 1，反之就是 0</strong><br>如： 1 0 1 0 0 1 ^ 1 1 0 0 1 0 _______________ 0 1 1 0 1 1</p>
-</blockquote>
-<h3 id="3-结论"><a href="#3-结论" class="headerlink" title="3.结论"></a>3. 结论</h3><p><strong>1：任何数异或 0 是不变的，1^0=1,0^0=0</strong><br><strong>2: 任何数异或 1 取反，1^1=0,0^1=1</strong></p>
-<p><strong>3: 任何数和其自身做异或运算，结果是 0</strong></p>
-<p><strong>4. 异或运算满足交换律和结合律</strong></p>
-
+    <div class="post-body" itemprop="articleBody"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="45bd089b1de20227a7d7b3d5ce9fe881a403e1aaa00d843f8e76a299673c8dbd">165d50f05814027fb7fe5e4ae8a088d86d0c1aba6d70b1044ca65dff1bf2218cbd3b930c090fc7b66d2adb6659e3ccf95194d3e32dc083e2525c89d0052fb19de71b1620ddb2e7b355e7ee5fd05404a69bda6c22a0217bd4d3d2594b3445ccdbdd7a6ee3d6676e7dd78202d7330cc589a3a37bb9a1c2ed57aa6a412412549c1174bc9e19ba7c2bde4b3a3741eefc5cc68e95b70c0a00ccc5a372d53193264017b841db02f3cb1075c920ab398c5211cb054c74f10325726f1c16e8fc83763e404b1b113d96993960687f92c8ac1d10f3fca18876cbc0fa7fb340506e08077070a07666c404b929089c6eea3c2be575036244cce40472eedda9d368ebf199068ed1801edf81f2ef3960be94fcaa3faefea541a6969a1dd75f0b309280079554b0500ceb8bddb9fe2e3702ef1887eef37b55501f49d8646c689f5191de7845e05f726a20f2bf742c0903616ba6512cb9a2dab598fa33f56efe0656a0ef415ab29d4fdce66f2b4b8b2d04fdd588f80ab2a6f1be05eebd022026147c53a13fe08dedf0e1ebf7a5a6d0fcb3be4fca14de3651dc4923cea3f4bbc6eb712f2033443f4236d2af85c634357e100c96baf4ec34cd276ffa6b4174d431d7e7eddc8a20ec0c7bc76eadf29a4e058c893d9a1bc1f7f106e7f4139bd4c648a411bad54f7ffa0692e3c34f0a23ed09ee9e4f8b1736c15ed54498192ef2b72112f78e9ec7d1f0eaaf4720f5b79c1c64eec1b712f2234725553d52a521c305d9483bc692f0d519b70fb11fbd82c7b36824e94d6a6912901ca5e3cac2bb883a7dcbd48781ac2b9812fdbe67557c43696708dd1fc07dcc13fa6e6754baed7845d3a09361c274a0f02e807ecc9587c11b39421a8e2fc3617f517afc211274a78191f29111729609fcfa78e0dbea7fa095f0a396d637c69c2d8fa1a8eb9fb9937869722a683d4e2e242fc8db1d33e8de90c3ad9aef4874d521231b68917439627c905cb9ec93b7069a45599317bc22580b418bfce93fd1e5e25702149dae50a437d058f7ee9e4fb7ff0b749da232430c1ea5eb47999f8e096f5f163ef19758805942efc792c029f76ba9a848836b98daf24cd3e4f1dca400cc8f712e9a9ac5130aa5e93af92eebdc9ea8f9444e72c3b0dd47d18525c926b99dd926abd8bd3ad36ff94c8c187ed723ea16261c42ee3c6805081158192b0c8eee32cd1dbaf5de40e8df8c14ad67b2237ca9382e305e54d461aefd4561d2a1f0cd1a0cccccf958d5cbefc3cc4f7d3a0acef63ea5c11ec7ef39387eec051a3c9fbff1c9405fa7c986a2f92276f42b72e27e5fc28350d161277acf2109938e258cf84592d6ef00c20651f504ff3fa633e824039e965a02e8396ca09b27f350de2d9fe84783760a1b47fea3bf73861162cacf532fd54f6e9c468e37750cc52c8003d6262875cc6624fcbd4946ddb8364cf7852b00f99ea448a7487b296fc5cc8c5c4c09e44f831219e30a2c34b420eaa28619bcea2f4daa9c0e0526b849400ccbe9bbf8b63191e13c1422edb1807ff8afa709f9c442f03d0f79d1eccb74086e1aae39212c9bdb1d49672f2df7540c57526fabe8b665a471e2f7e22ba1de4e0c9dbdb5e1806c2b2cf3b283c76db39f913dd25d702eef9dbe7720b0b035efe03aa4113ef69e219c4d0e80e4820b7ba41c56848f1eb994dbbb9ad77e015938afbac6d8a1ce73499ed5ba775d5b90354dddf5f21656f7929d3fc857820ebe22c47050b0939b4c6b736248ca65b853aad35bf864d0bd9f10f646fd45f34fbf0ced190feb2a6dab59a85217bc9ab43ed267c193acb4bf61787eccbda2cb2887f3cb4f2a8e37584367c23fc4a51ebec9fb2c991d68f2a731f788adb814519dca8275da89f484f9245f086e9992abcb6c999103538a9d324c5021d5c2728889654973d57164fa98beae7f46497e902a885e68548168f13af078bb35f959121f14ae14c1a1c56f752a8e58aed0cfea43e3e2dbc35ad8dfbbb562e65fdf7526774dbaf22f29f51acf6d821dea60abee4c6566c79612686fd6b4d6a8f0b4616503f17ffa226a0b4aaeff75eb93aeef889fd8ec341152bff787cabf58766ca9c35ef12b28b8b7bf1298a9c8b98acaf3d12f8e22cdc8e8bde3428759c283e093c330cbde6bf827a66c2929e04d32109fc914d3d87fe6603161888997a64492ffd95c6c19719326f29a36504302198153a527ee05e7fbb9acf8b79e5b392a530fc2b2f04f54a8bd2fbe235cd5e0594a8eaf86f7da345f4a9408d0d91abcf05ddfdccd26d745282d94359d09d6a4ab8888659e73c15aaa33d2dce980f9e69daffd9b54b8a71c52c956d0560820a3874733b054bca88c5a2014a990df2099265815ff08c13d0397a99f4c882b6c73427b9225839ca9a3230a355b2f8d02a620eb905ad9e7445cc96046a6a470e6ed4a8456ae29d6f04f8bcb346f1acb8346c9db128c9d34f152df424df8d2a37ebb4ab311481aed5de8a745e3ec63d672b6df27bc82897d152f94d2b7a87ce708620fe872cbd416ef2d09d8c38013776f6b6f08f6e5de6622cc78336a7f03e80d7c7f916c636556b8cf571766b93f1b68c20be6ef11e43da0a96fd56057fdf872b507c1a8c7a847adb9e5cd28ec6ceaedf19c7eb9318414c9c98ef4bbb796a4bea780a8aabcb268018d0fb8f3d7e1effe2371a13ef42b0c762468ff6784983d3d5b5557151d274d1e31b10abbf49846d2e55212ad210fb8d5454c2487f7da077a8ab67f88578517483a40ee407b9de0b61e3993cc41764d364b06c4047538a7df5a85630d52f02d6a88c65e36830607af4c5c2b25060689346528f70ff750c5bb38be1e921a579702a2f9fcb29bf32702e352e3a67369ebc0ccf577282d4a39539094a2991a9869f1102de2b38617401e2374cab1fb363004d383b1a29c7473b0f248d2def0bb302e3ba3c75f108fb973bb495647be7cdd46d2332e4e929d80ec7c4c396df0cf1a3a8146c9255181b65ed8b95c10cdbe7de6b3821ce33e99284d9aa136b7ce0a96c3aaa4fc8bdac1c7df134f3cfb6e65b88a13024b0064af805239eec4a105468be08336cfb3ce53db217d2cf14d6d039c5508bb0527323596f22e393bfea20ede34032cb56645720b7fc3ff3df8685fae750118b1cede1bfc424d1e5dab9e16e500afa381e2d85bc938b444f1d656b9b32e2605d880b82da236025a7f1029da2386138f5cf39903bd95dfb99efaa0d215575e71d464d772a5d7bfebcc598761344eff5b95ce0bb5</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
     </div>
 
     
@@ -383,9 +355,6 @@
   </div>
 </div>
 
-          <div class="post-tags">
-              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
-          </div>
 
         
   <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
@@ -399,11 +368,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/09/11/123/" rel="prev" title="关于本网站">
-                  <i class="fa fa-angle-left"></i> 关于本网站
-                </a>
             </div>
             <div class="post-nav-item">
+                <a href="/123/" rel="next" title="关于本网站">
+                  关于本网站 <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -445,7 +414,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1 分钟</span>
+    <span title="站点阅读时长">3 分钟</span>
   </span>
 </div>
 
@@ -469,7 +438,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共1k字</span>
+  <span class="post-count">博客全站共634字</span>
 </div>
 <div>
 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
