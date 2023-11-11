@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-center-atom.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":12,"offset":10},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="分页">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分页实现">
+<meta property="og:url" content="http://example.com/%E5%88%86%E9%A1%B5%E5%AE%9E%E7%8E%B0/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="分页">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-09T10:53:06.000Z">
+<meta property="article:modified_time" content="2023-11-11T14:00:34.871Z">
+<meta property="article:author" content="ddj">
+<meta property="article:tag" content="pagehelper">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/%E5%88%86%E9%A1%B5%E5%AE%9E%E7%8E%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/%E5%88%86%E9%A1%B5%E5%AE%9E%E7%8E%B0/","path":"分页实现/","title":"分页实现"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>分页实现 | </title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?247ac9f3f2794c5bcfd67116fbad7aa9"></script>
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+	<a target="_blank" rel="noopener" href="https://github.com/Rcontinuing/Rcontinuing.github.io" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title"></p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">向 着 光 出 发</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-我"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>我</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-时间线"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>时间线</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E9%A1%B5"><span class="nav-number">1.</span> <span class="nav-text">分页</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-pagehelper"><span class="nav-number">1.1.</span> <span class="nav-text">1.pagehelper</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E4%BD%BF%E7%94%A8%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 使用：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 测试用例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E5%B8%B8%E8%A7%81%E5%B1%9E%E6%80%A7"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 常见属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4 注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.5.</span> <span class="nav-text">1.5 实现原理</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ddj"
+      src="/images/9.png">
+  <p class="site-author-name" itemprop="name">ddj</p>
+  <div class="site-description" itemprop="description">记录生活和学习</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+      <!-- require APlayer --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+      <!-- require MetingJS-->
+      <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+       <!--网易云-->   
+       <div class="aplayer" data-id="8729907126" data-server="netease" data-type="playlist" 
+        data-fixed="false" data-autoplay="false" data-list-folded="true"data-mutex="true" 
+        data-order="list" data-loop="all" data-volume="0.4" data-theme="#FADFA3" 
+        date-preload="auto" > 
+       </div>
+       
+
+      <!--
+       <div class="aplayer" data-id="9019708176" data-server="tencent" data-type="playlist" 
+        data-fixed="false" data-autoplay="false" data-list-folded="true" data-mutex="true" 
+        data-order="list" data-loop="all" data-volume="0.4" data-theme="#FADFA3" 
+        date-preload="auto" >
+       </div>
+       -->
+
+       <!--qq-->
+    </div>
+
+    
+  </aside>
+
+
+      <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+      <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+      <script type="text/javascript" src="/js/fireworks.js"></script>
+    </div>
+
+    
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/%E5%88%86%E9%A1%B5%E5%AE%9E%E7%8E%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/9.png">
+      <meta itemprop="name" content="ddj">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="记录生活和学习">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="分页实现 | ">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          分页实现
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-09 18:53:06" itemprop="dateCreated datePublished" datetime="2023-11-09T18:53:06+08:00">2023-11-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-11 22:00:34" itemprop="dateModified" datetime="2023-11-11T22:00:34+08:00">2023-11-11</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+
+          
+              <i class="fa fa-thumb-tack" style="color: #EB6D39"></i>
+              <font color=EB6D39>置顶</font>
+              <span class="post-meta-divider">|</span>
+          
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h1><span id="more"></span>
+
+<h2 id="1-pagehelper"><a href="#1-pagehelper" class="headerlink" title="1.pagehelper"></a>1.pagehelper</h2><h3 id="1-1使用："><a href="#1-1使用：" class="headerlink" title="1.1使用："></a>1.1 使用：</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.导入依赖</span></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;pagehelper&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;<span class="number">5.2</span><span class="number">.0</span>&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2.在MyBatis的核心配置文件（mybatis-config.xml）中配置插件</span></span><br><span class="line">&lt;plugins&gt;</span><br><span class="line">	&lt;!--设置分页插件--&gt;</span><br><span class="line">	&lt;plugin interceptor=<span class="string">"com.github.pagehelper.PageInterceptor"</span>&gt;&lt;/plugin&gt;</span><br><span class="line">&lt;/plugins&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//3.开启分页功能</span></span><br><span class="line">PageHelper.startPage(<span class="type">int</span> pageNum, <span class="type">int</span> pageSize)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="1-2测试用例"><a href="#1-2测试用例" class="headerlink" title="1.2测试用例"></a>1.2 测试用例</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span>  <span class="title function_">testPageHelper</span><span class="params">()</span>{</span><br><span class="line">       ApplicationContext app=<span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(<span class="string">"applicationContext-mybatis.xml"</span>);</span><br><span class="line">       <span class="type">SqlSessionFactory</span> <span class="variable">sqlSessionFactory</span> <span class="operator">=</span> (SqlSessionFactory)app.getBean(<span class="string">"sqlSessionFactory"</span>);</span><br><span class="line">       <span class="type">SqlSession</span> <span class="variable">session</span> <span class="operator">=</span> sqlSessionFactory.openSession();</span><br><span class="line"></span><br><span class="line">       <span class="type">UserMapper</span> <span class="variable">userMapper</span> <span class="operator">=</span> session.getMapper(UserMapper.class);</span><br><span class="line">       </span><br><span class="line">       <span class="comment">//在查询语句之前，开启分⻚功能。</span></span><br><span class="line">       PageHelper.startPage(<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line">       List&lt;User&gt; users = userMapper.selectAllUser();</span><br><span class="line">       </span><br><span class="line">	<span class="comment">//封装PageInfo对象</span></span><br><span class="line">       PageInfo&lt;User&gt; pageInfo=<span class="keyword">new</span> <span class="title class_">PageInfo</span>&lt;User&gt;(users);</span><br><span class="line">       </span><br><span class="line">       System.out.println(<span class="string">"总记录数："</span>+pageInfo.getTotal());</span><br><span class="line">       System.out.println(<span class="string">"总页数："</span>+pageInfo.getPages());</span><br><span class="line">       System.out.println(<span class="string">"一页的大小："</span>+pageInfo.getSize());</span><br><span class="line">       System.out.println(<span class="string">"结果集："</span>+pageInfo.getList());</span><br><span class="line">       System.out.println(<span class="string">"前一页："</span>+pageInfo.getPrePage());</span><br><span class="line">       System.out.println(<span class="string">"后一页："</span>+pageInfo.getNextPage());</span><br><span class="line">       System.out.println(pageInfo.isHasPreviousPage());</span><br><span class="line">       System.out.println(pageInfo.isHasNextPage());</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//测试结果</span></span><br><span class="line">总记录数：<span class="number">8</span></span><br><span class="line">总页数：<span class="number">3</span></span><br><span class="line">一页的大小：<span class="number">3</span></span><br><span class="line">结果集：Page{count=<span class="literal">true</span>, pageNum=<span class="number">2</span>, pageSize=<span class="number">3</span>, startRow=<span class="number">3</span>, endRow=<span class="number">6</span>, total=<span class="number">8</span>, pages=<span class="number">3</span>, reasonable=<span class="literal">false</span>, pageSizeZero=<span class="literal">false</span>}</span><br><span class="line">[com.pojo.User@41e68d87, com.pojo.User@49ff7d8c, com.pojo.User@29526c05]</span><br><span class="line">前一页：<span class="number">1</span></span><br><span class="line">后一页：<span class="number">3</span></span><br><span class="line"><span class="literal">true</span></span><br><span class="line"><span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="1-3常见属性"><a href="#1-3常见属性" class="headerlink" title="1.3常见属性"></a>1.3 常见属性</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//		  private int pageNum; //当前页</span></span><br><span class="line"><span class="comment">//        private int pageSize; //每页的数量</span></span><br><span class="line"><span class="comment">//        private int size; //当前页的数量</span></span><br><span class="line"><span class="comment">//由于startRow和endRow不常用，这里说个具体的用法</span></span><br><span class="line"><span class="comment">//可以在页面中"显示startRow到endRow 共size条数据"</span></span><br><span class="line"><span class="comment">//当前页面第一个元素在数据库中的行号</span></span><br><span class="line"><span class="comment">//        private int startRow;</span></span><br><span class="line"><span class="comment">//        private int endRow; //当前页面最后一个元素在数据库中的行号</span></span><br><span class="line"><span class="comment">//        private long total; //总记录数</span></span><br><span class="line"><span class="comment">//        private int pages; //总页数</span></span><br><span class="line"><span class="comment">//        private List&lt;T&gt; list; //结果集(每页显示的数据)</span></span><br><span class="line"><span class="comment">//        private int firstPage; //第一页</span></span><br><span class="line"><span class="comment">//        private int prePage; //前一页</span></span><br><span class="line"><span class="comment">//        private boolean isFirstPage = false;  //是否为第一页</span></span><br><span class="line"><span class="comment">//        private boolean isLastPage = false; //是否为最后一页</span></span><br><span class="line"><span class="comment">//        private boolean hasPreviousPage = false; //是否有前一页</span></span><br><span class="line"><span class="comment">//        private boolean hasNextPage = false; //是否有下一页</span></span><br><span class="line"><span class="comment">//        private int navigatePages; //导航页码数</span></span><br><span class="line"><span class="comment">//        private int[] navigatepageNums; //所有导航页号</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="1-4注意事项"><a href="#1-4注意事项" class="headerlink" title="1.4注意事项"></a>1.4 注意事项</h3><figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">使用pagehelper时会出现失效的情况</span><br><span class="line">PageHelper.startPage(int pageNum, int pageSize)只对该语句以后的第一个查询语句得到的数据进行分页</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="1-5实现原理"><a href="#1-5实现原理" class="headerlink" title="1.5实现原理"></a>1.5 实现原理</h3><p>主要是通过拦截器（Interceptor）来实现。在 MyBatis 中，提供了 Interceptor 接口用于对 SQL 语句进行拦截和处理，PageHelper 就是实现了这个接口，从而实现了对 SQL 语句的拦截和分页处理。</p>
+<p>PageHelper 在拦截器中主要做了如下几个事情：</p>
+<ul>
+<li>解析分页参数：通过拦截 Executor 的 query () 方法，获取传入的参数，解析出当前所在的页码、每页显示的数据量等分页参数。</li>
+<li>生成分页 SQL：通过拦截 StatementHandler 的 prepare () 方法，将原始的 SQL 语句修改为分页查询的 SQL 语句，具体实现方式是根据当前数据库类型，使用相应的方言（Dialect）生成分页查询语句。</li>
+<li>执行分页查询：通过拦截 Executor 的 query () 方法，将修改后的 SQL 语句执行，并将结果保存在 Page 对象中，同时返回分页查询结果 List。</li>
+<li>生成分页信息：通过自定义 Page 对象，保存当前页码、每页显示的数据量、总记录数以及分页查询结果 List，最终返回 PageInfo 对象，包含了分页查询的所有信息。</li>
+</ul>
+<p>具体分析：</p>
+<p>List<user> users = userMapper.selectAllUser();</user></p>
+<p>其中 User 是 page 对象，而 Page 对象继承自 JDK 中的 ArrayList，扩展并封装了一些 page 相关的字段，如页码，每页大小，总记录数，总页数等。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Page</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">ArrayList</span>&lt;E&gt; <span class="keyword">implements</span> <span class="title class_">Closeable</span> {</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 页码，从1开始</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> pageNum;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 页面大小</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> pageSize;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 起始行</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">long</span> startRow;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 末行</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">long</span> endRow;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 总数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">long</span> total;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 总页数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> pages;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 包含count查询</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="variable">count</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 分页合理化</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Boolean reasonable;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 当设置为true的时候，如果pagesize设置为0（或RowBounds的limit=0），就不执行分页，返回全部结果</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Boolean pageSizeZero;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 进行count查询的列名</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String countColumn;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 排序</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String orderBy;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 只增加排序</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> orderByOnly;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * sql拦截处理</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> BoundSqlInterceptor boundSqlInterceptor;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">transient</span> BoundSqlInterceptor.Chain chain;</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<p>PageHelper.startPage(pageNum, pageSize)</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 开始分页</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> pageNum      页码</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> pageSize     每页显示数量</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> count        是否进行count查询</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> reasonable   分页合理化,null时用默认配置</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> pageSizeZero true且pageSize=0时返回全部结果，false时分页,null时用默认配置</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E&gt; Page&lt;E&gt; <span class="title function_">startPage</span><span class="params">(<span class="type">int</span> pageNum, <span class="type">int</span> pageSize, <span class="type">boolean</span> count, Boolean reasonable, Boolean pageSizeZero)</span> {</span><br><span class="line">    Page&lt;E&gt; page = <span class="keyword">new</span> <span class="title class_">Page</span>&lt;E&gt;(pageNum, pageSize, count);</span><br><span class="line">    page.setReasonable(reasonable);</span><br><span class="line">    page.setPageSizeZero(pageSizeZero);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//当已经执行过orderBy的时候</span></span><br><span class="line">    Page&lt;E&gt; oldPage = getLocalPage();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (oldPage != <span class="literal">null</span> &amp;&amp; oldPage.isOrderByOnly()) {</span><br><span class="line">        page.setOrderBy(oldPage.getOrderBy());</span><br><span class="line">    }</span><br><span class="line">    setLocalPage(page);</span><br><span class="line">    <span class="keyword">return</span> page;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>可以看到该方法将分页信息作为构造器参数实例化 Page 对象，调用 <code>getLocalPage()</code> 获取一个旧的 Page 对象，最后调用 <code>setLocalPage(page);</code> 把新创建的 Page 对象 set 进去。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">final</span> ThreadLocal&lt;Page&gt; LOCAL_PAGE = <span class="keyword">new</span> <span class="title class_">ThreadLocal</span>&lt;Page&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; Page&lt;T&gt; <span class="title function_">getLocalPage</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> LOCAL_PAGE.get();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">setLocalPage</span><span class="params">(Page page)</span> {</span><br><span class="line">        LOCAL_PAGE.set(page);</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<p>从 ThreadLocal 中获取 Page 对象，将 Page 对象 set 到 ThreadLocal 中。</p>
+<p>以上是 PageHelper 实现分页的原理，总结一下：</p>
+<p>Mybatis 在四个地方留了扩展点，可以通过自定义拦截器实现 Interceptor 接口的 plugin 方法，执行自定义逻辑，可以通过该方法对 Executor、ParameterHandler、ResultSetHandler、StatementHandler 四个对象进行增强、扩展。</p>
+<p>PageHelper 实现了 Interceptor 接口，它的 plugin 方法调用 Plugin.wrap 方法对目标对象进行包装，包装成一个代理对象并返回，代理类的实现就是 Plugin 自身。</p>
+<p>Plugin.wrap 方法判断目标对象是否需要返回代理对象，判断依据是：Interceptor 实现类（这里是 PageHelper) 上注解标注的类是否包含目标对象所属类。这里 PageHelper 上注解标注参数为 Executor 对象，所以创建 Executor 对象会返回代理对象。</p>
+<p>当调用 Executor 对象的方法时会进入到 Plugin.invoke 方法。invoke 方法会判断是否需要走拦截器的 intercept 方法，判断方式是取拦截器上的注解标注的方法，这里 PageHelper 标注的为 executor.query (四个参数的那个)，所以调这个时才会被拦截器拦截，其余方法还用原始对象调用。</p>
+<p>PageHelper 的 intercept 方法调用 SqlUtil 的 intercept 方法最终调 SqlUtil.doIntercept 方法。在这个方法里会执行 count 语句，并将结果放到 page 对象里，然后判断需要分页，则将分页 sql 拼在原始 sql 上，然后执行。</p>
+<p>PageHelper 实现了 Interceptor 拦截器接口，并拦截 Executor 的 query 方法，在执行前 PageHelper 会在原始 SQL 前拼装分页相关的 SQL。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="ddj 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="ddj 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/pagehelper/" rel="tag"><i class="fa fa-tag"></i> pagehelper</a>
+          </div>
+
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_wechat"></a>
+      <a class="a2a_button_qzone"></a>
+      <a class="a2a_button_sina weibo"></a>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="prev" title="位运算">
+                  <i class="fa fa-angle-left"></i> 位运算
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3ThreadLocal/" rel="next" title="深入了解 ThreadLocal">
+                  深入了解 ThreadLocal <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81ODk3OS8zNTQ0MQ=="></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+<!--
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">null </a>
+  </div>-->
+
+ <!--
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">true</span>
+  </div>-->
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">5k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">17 分钟</span>
+  </span>
+</div>
+
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        本站访客数:<span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        本站总访问量:<span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共4.8k字</span>
+</div>
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("09/12/2023 22:00:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>-->
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  <script src="/js/third-party/addtoany.js"></script>
+
+  
+  <script async src="/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="/js/third-party/comments/livere.js"></script>
+
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":false},"log":false});</script></body>
+</html>
